@@ -33,15 +33,12 @@ module.exports = {
       template: './src/index.html',
     }),
     new MiniCSSExtractPlugin({
-      filename: 'main.css',
+      filename: 'index.css',
     }),
   ],
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
-  },
-  optimization: {
-    // runtimeChunk: 'single',
   },
 };
