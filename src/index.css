@@ -28,10 +28,6 @@ input {
   border: none;
 }
 
-li > input {
-  height: 1.5rem;
-}
-
 /* Button styles */
 .input-btn-ccw,
 .input-sbt-enter,
