@@ -41,7 +41,6 @@ function renderTasks() {
     listItem.appendChild(checkbox);
     listItem.appendChild(textarea);
     listItem.appendChild(dotsButton);
-
     tasksContainer.appendChild(listItem);
 
     textarea.addEventListener('input', () => {
