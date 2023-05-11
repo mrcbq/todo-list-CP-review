@@ -9,13 +9,13 @@ import {
 } from './methods.js';
 
 const tasksContainer = document.getElementById('tasks-container');
-function renderTasks() {
+export default function renderTasks() {
   const tasks = updateTasks();
   tasksContainer.innerHTML = '';
   tasks.forEach((task, idx) => {
     const listItem = document.createElement('li');
     const checkbox = document.createElement('input');
-    const textarea = document.createElement('input');
+    const input = document.createElement('input');
     const dotsButton = document.createElement('input');
 
     checkbox.setAttribute('type', 'checkbox');
@@ -23,8 +23,8 @@ function renderTasks() {
     checkbox.setAttribute('alt', 'Check!');
     checkbox.checked = task.completed;
 
-    textarea.setAttribute('maxlength', '255');
-    textarea.value = task.description;
+    input.setAttribute('maxlength', '255');
+    input.value = task.description;
 
     const attrs = {
       type: 'button',
@@ -39,12 +39,12 @@ function renderTasks() {
     });
 
     listItem.appendChild(checkbox);
-    listItem.appendChild(textarea);
+    listItem.appendChild(input);
     listItem.appendChild(dotsButton);
     tasksContainer.appendChild(listItem);
 
-    textarea.addEventListener('input', () => {
-      editTask(idx + 1, textarea.value);
+    input.addEventListener('input', () => {
+      editTask(idx + 1, input.value);
     });
 
     checkbox.addEventListener('change', () => {
